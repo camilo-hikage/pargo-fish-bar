@@ -1,7 +1,7 @@
 /* ============================================================
    Pargo Fish Bar — estilo
    paleta: azul-noite #203351 · azul-aço #91A2C0
-           coral #EE7B57 · sol #E7B24A  (acentos alegres)
+           coral #EE7B57 · sol #E7B24A · areia #EFE6D3
    ============================================================ */
 :root {
   --paper: #203351;
@@ -19,6 +19,7 @@
   --coral: #ee7b57;
   --coral-2: #d9663f;
   --sun: #e7b24a;
+  --sand: #efe6d3;
 
   --line-d: rgba(145, 162, 192, 0.2);
   --line-l: rgba(145, 162, 192, 0.24);
@@ -358,9 +359,9 @@ h3 {
 .ph {
   position: relative;
   background:
-    radial-gradient(120% 90% at 30% 12%, rgba(145, 162, 192, 0.28), transparent 60%),
-    linear-gradient(160deg, #2c4368, #1d3049);
-  border: 1px solid var(--line-d);
+    radial-gradient(120% 90% at 30% 10%, rgba(255, 255, 255, 0.5), transparent 58%),
+    linear-gradient(160deg, var(--sand), #e2d6bd);
+  border: 1px solid var(--line-l);
 }
 .ph::after {
   content: "foto";
@@ -371,7 +372,7 @@ h3 {
   font-size: 0.66rem;
   letter-spacing: 0.3em;
   text-transform: uppercase;
-  color: rgba(220, 227, 241, 0.4);
+  color: rgba(32, 51, 81, 0.4);
 }
 .hero .ph {
   background:
@@ -401,6 +402,15 @@ h3 {
 }
 .section-head h2 {
   font-size: clamp(2.4rem, 5vw, 3.6rem);
+}
+.section-head h2::after {
+  content: "";
+  display: block;
+  width: 44px;
+  height: 2px;
+  margin: 1.1rem auto 0;
+  background: var(--sand);
+  opacity: 0.7;
 }
 .section-head .sub {
   color: var(--ink-soft);
