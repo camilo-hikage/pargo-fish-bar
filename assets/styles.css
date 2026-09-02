@@ -1,24 +1,27 @@
 /* ============================================================
    Pargo Fish Bar — estilo
-   paleta do logo: oxblood + creme + azul-poeira
-   base clara (papel), faixas escuras (oxblood)
+   paleta: azul-noite #203351 · azul-aço #91A2C0
+           coral #EE7B57 · sol #E7B24A  (acentos alegres)
    ============================================================ */
 :root {
-  --paper: #f4ebd8;
-  --paper-2: #ece1c7;
-  --ink: #3a140f;
-  --ink-soft: #71463b;
+  --paper: #203351;
+  --paper-2: #1b2c47;
+  --ink: #dce3f1;
+  --ink-soft: #97a6c3;
 
-  --ox: #5c1712;
-  --ox-2: #430f09;
-  --cream: #f8f1e2;
-  --cream-dim: #d9c6ad;
+  --ox: #243c5e;
+  --ox-2: #172740;
+  --cream: #eaeef8;
+  --cream-dim: #9aa8c5;
 
-  --blue: #5c7b8c;
-  --blue-deep: #3f5c69;
+  --blue: #91a2c0;
+  --blue-deep: #6b80a6;
+  --coral: #ee7b57;
+  --coral-2: #d9663f;
+  --sun: #e7b24a;
 
-  --line-d: rgba(58, 20, 15, 0.16);
-  --line-l: rgba(248, 241, 226, 0.22);
+  --line-d: rgba(145, 162, 192, 0.2);
+  --line-l: rgba(145, 162, 192, 0.24);
 
   --serif: "Fraunces", "Cormorant Garamond", Georgia, serif;
   --sans: "Jost", system-ui, -apple-system, "Segoe UI", sans-serif;
@@ -69,11 +72,11 @@ h3 {
   text-transform: uppercase;
   letter-spacing: 0.32em;
   font-size: 0.7rem;
-  color: var(--blue-deep);
+  color: var(--coral);
   margin-bottom: 1.1rem;
 }
 .accent {
-  color: var(--ox);
+  color: var(--coral);
   font-style: italic;
 }
 
@@ -85,32 +88,36 @@ h3 {
   letter-spacing: 0.2em;
   font-size: 0.7rem;
   padding: 1rem 1.7rem;
-  border: 1px solid var(--ink);
+  border: 1px solid var(--blue);
   color: var(--ink);
   background: transparent;
   cursor: pointer;
   transition: background 0.25s ease, color 0.25s ease, border-color 0.25s ease;
 }
 .btn-solid {
-  background: var(--ox);
-  border-color: var(--ox);
-  color: var(--cream);
+  background: var(--coral);
+  border-color: var(--coral);
+  color: #22140d;
 }
 .btn-solid:hover {
-  background: var(--ink);
-  border-color: var(--ink);
+  background: var(--sun);
+  border-color: var(--sun);
+  color: #22140d;
+}
+.btn-ghost {
+  border-color: var(--coral);
 }
 .btn-ghost:hover {
-  background: var(--ink);
-  color: var(--paper);
+  background: var(--coral);
+  color: #22140d;
 }
 .btn-link {
   border: 0;
   padding: 1rem 0.2rem;
-  color: var(--ox);
+  color: var(--coral);
 }
 .btn-link:hover {
-  color: var(--ink);
+  color: var(--sun);
 }
 
 /* ============================================================
@@ -167,7 +174,7 @@ h3 {
   bottom: 0;
   width: 0;
   height: 1px;
-  background: var(--blue);
+  background: var(--coral);
   transition: width 0.25s ease;
 }
 .nav a:hover::after {
@@ -243,12 +250,12 @@ h3 {
 }
 
 /* ============================================================
-   HERO (faixa oxblood)
+   HERO (faixa azul-noite)
    ============================================================ */
 .hero {
   background:
-    radial-gradient(90% 60% at 78% 8%, rgba(92, 123, 140, 0.22), transparent 60%),
-    var(--ox);
+    radial-gradient(95% 65% at 78% 6%, rgba(145, 162, 192, 0.26), transparent 62%),
+    linear-gradient(180deg, #264064, #1d3049);
   color: var(--cream);
   padding: 11rem 0 0;
 }
@@ -262,7 +269,7 @@ h3 {
   align-items: center;
 }
 .hero .eyebrow {
-  color: var(--blue);
+  color: var(--sun);
 }
 .hero-copy h1 {
   font-size: clamp(3.2rem, 8vw, 6rem);
@@ -270,7 +277,7 @@ h3 {
   color: var(--cream);
 }
 .hero .accent {
-  color: var(--blue);
+  color: var(--coral);
 }
 .hero .lead {
   max-width: 34ch;
@@ -289,21 +296,25 @@ h3 {
   color: var(--cream);
 }
 .hero .btn-solid {
-  background: var(--cream);
-  color: var(--ox);
-  border-color: var(--cream);
+  background: var(--coral);
+  color: #22140d;
+  border-color: var(--coral);
 }
 .hero .btn-solid:hover {
-  background: transparent;
-  color: var(--cream);
+  background: var(--sun);
+  border-color: var(--sun);
+  color: #22140d;
+}
+.hero .btn-ghost {
+  border-color: var(--cream);
 }
 .hero .btn-ghost:hover {
   background: var(--cream);
-  color: var(--ox);
+  color: var(--paper);
 }
 .hero .btn-link {
   border: 0;
-  color: var(--blue);
+  color: var(--sun);
 }
 .hero .btn-link:hover {
   color: var(--cream);
@@ -329,7 +340,7 @@ h3 {
   text-transform: uppercase;
   letter-spacing: 0.28em;
   font-size: 0.64rem;
-  color: var(--blue);
+  color: var(--sun);
   margin-bottom: 0.5rem;
 }
 .hero-strip .v {
@@ -337,7 +348,8 @@ h3 {
   font-size: 0.92rem;
 }
 .hero-strip a {
-  border-bottom: 1px solid var(--blue-deep);
+  color: var(--cream);
+  border-bottom: 1px solid var(--coral);
 }
 
 /* ============================================================
@@ -346,8 +358,8 @@ h3 {
 .ph {
   position: relative;
   background:
-    radial-gradient(120% 90% at 30% 12%, rgba(92, 123, 140, 0.22), transparent 60%),
-    linear-gradient(160deg, #e6d9bd, #d8c8a4);
+    radial-gradient(120% 90% at 30% 12%, rgba(145, 162, 192, 0.28), transparent 60%),
+    linear-gradient(160deg, #2c4368, #1d3049);
   border: 1px solid var(--line-d);
 }
 .ph::after {
@@ -359,16 +371,16 @@ h3 {
   font-size: 0.66rem;
   letter-spacing: 0.3em;
   text-transform: uppercase;
-  color: rgba(58, 20, 15, 0.35);
+  color: rgba(220, 227, 241, 0.4);
 }
 .hero .ph {
   background:
-    radial-gradient(130% 100% at 32% 8%, rgba(150, 175, 190, 0.4), transparent 62%),
-    linear-gradient(155deg, #953428, #5a1710);
-  border-color: rgba(248, 241, 226, 0.35);
+    radial-gradient(130% 100% at 32% 8%, rgba(145, 162, 192, 0.42), transparent 62%),
+    linear-gradient(155deg, #33507b, #1d3049);
+  border-color: rgba(234, 238, 248, 0.32);
 }
 .hero .ph::after {
-  color: rgba(248, 241, 226, 0.4);
+  color: rgba(234, 238, 248, 0.42);
 }
 .ph-hero {
   aspect-ratio: 3 / 4;
@@ -440,7 +452,7 @@ h3 {
   text-transform: uppercase;
   letter-spacing: 0.14em;
   font-size: 0.72rem;
-  color: var(--blue-deep);
+  color: var(--coral);
 }
 
 .marks {
@@ -456,10 +468,10 @@ h3 {
   content: "";
   position: absolute;
   left: 0;
-  top: 0.75em;
+  top: 0.7em;
   width: 8px;
   height: 8px;
-  border: 1px solid var(--ox);
+  background: var(--coral);
   transform: rotate(45deg);
 }
 
@@ -485,8 +497,8 @@ h3 {
   transition: color 0.2s ease, border-color 0.2s ease;
 }
 .menu-tabs button[aria-selected="true"] {
-  color: var(--ox);
-  border-bottom-color: var(--ox);
+  color: var(--coral);
+  border-bottom-color: var(--coral);
 }
 .menu-panels {
   max-width: 780px;
@@ -526,7 +538,7 @@ h3 {
   font-family: var(--sans);
   font-size: 0.74rem;
   letter-spacing: 0.12em;
-  color: var(--blue-deep);
+  color: var(--sun);
   white-space: nowrap;
 }
 .menu-item p {
@@ -620,7 +632,7 @@ h3 {
   text-transform: uppercase;
   letter-spacing: 0.24em;
   font-size: 0.66rem;
-  color: var(--blue);
+  color: var(--sun);
   margin-bottom: 1rem;
 }
 .footer-cols a {
