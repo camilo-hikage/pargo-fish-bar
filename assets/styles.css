@@ -426,6 +426,17 @@ h3 {
   aspect-ratio: 4 / 5;
   border-radius: 3px;
 }
+.map-media {
+  display: flex;
+  justify-content: center;
+}
+.map-media img {
+  width: auto;
+  max-width: 100%;
+  max-height: 78vh;
+  border-radius: 4px;
+  border: 1px solid var(--line-l);
+}
 
 .hours {
   list-style: none;
