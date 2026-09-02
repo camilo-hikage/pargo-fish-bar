@@ -97,8 +97,22 @@
     </section>
 
     <!-- ============ SOBRE ============ -->
-    <section class="section sobre" id="sobre">
-      <div class="sobre-grid">
+    <section class="sobre" id="sobre">
+      <video
+        class="section-bg-video"
+        src="assets/celebra.mp4"
+        poster="assets/hero-poster.svg"
+        autoplay
+        muted
+        loop
+        playsinline
+        preload="metadata"
+        aria-hidden="true"
+      ></video>
+      <div class="section-bg-overlay"></div>
+
+      <div class="sobre-inner">
+        <div class="sobre-grid">
         <div class="sobre-video-inner reveal">
           <p class="eyebrow">O conceito</p>
           <h2>Do anzol ao copo</h2>
@@ -119,19 +133,20 @@
           </ul>
         </div>
 
-        <figure class="sobre-media reveal">
-          <video
-            class="sobre-clip"
-            src="assets/sobre-bg.mp4"
-            poster="assets/hero-poster.svg"
-            autoplay
-            muted
-            loop
-            playsinline
-            preload="metadata"
-            aria-label="Cozinha e bar do Pargo Fish Bar"
-          ></video>
-        </figure>
+          <figure class="sobre-media reveal">
+            <video
+              class="sobre-clip"
+              src="assets/sobre-bg.mp4"
+              poster="assets/hero-poster.svg"
+              autoplay
+              muted
+              loop
+              playsinline
+              preload="metadata"
+              aria-label="Cozinha e bar do Pargo Fish Bar"
+            ></video>
+          </figure>
+        </div>
       </div>
     </section>
 
