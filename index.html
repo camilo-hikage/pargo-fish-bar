@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pargo Fish Bar — Sabor de mar, alma de bar · Ubatuba</title>
+  <meta name="description" content="Drinks autorais e cozinha marítima em Ubatuba, SP. Frutos do mar frescos, raw bar e coquetelaria de assinatura." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Jost:wght@300;400;500&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body>
+  <!-- ============ HEADER ============ -->
+  <header class="site-header" id="header">
+    <div class="header-inner">
+      <nav class="nav nav-left" aria-label="Principal">
+        <a href="#sobre">Sobre</a>
+        <a href="#menu">Menu</a>
+        <a href="#galeria">Galeria</a>
+      </nav>
+
+      <a href="#top" class="brand" aria-label="Pargo Fish Bar — início">
+        <span class="brand-mark" role="img" aria-label="Pargo Fish Bar"></span>
+        <span class="brand-text">
+          <strong>Pargo</strong>
+          <em>Fish Bar</em>
+        </span>
+      </a>
+
+      <nav class="nav nav-right" aria-label="Ações">
+        <a href="#contato">Contato</a>
+        <a href="#reservar" class="btn btn-ghost">Reservar</a>
+      </nav>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Abrir menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ============ HERO ============ -->
+  <main id="top">
+    <section class="hero">
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">Ubatuba · Litoral Norte</p>
+          <h1>
+            Sabor de mar,<br />
+            <span class="accent">alma de bar</span>
+          </h1>
+          <p class="lead">
+            Drinks autorais e cozinha marítima num só balcão. Peixe fresco do dia,
+            raw bar e coquetelaria de assinatura — de frente pro mar.
+          </p>
+          <div class="hero-actions">
+            <a href="#reservar" class="btn btn-solid">Reservar uma mesa</a>
+            <a href="#menu" class="btn btn-link">Ver o menu →</a>
+          </div>
+        </div>
+
+        <figure class="hero-media">
+          <div class="arch">
+            <div class="ph ph-hero" role="img" aria-label="Balcão do Pargo Fish Bar"></div>
+          </div>
+        </figure>
+      </div>
+
+      <div class="hero-strip">
+        <div>
+          <span class="k">Onde</span>
+          <span class="v">R. Eugênio Frediani, 46 — Ubatuba, SP</span>
+        </div>
+        <div>
+          <span class="k">Horário</span>
+          <span class="v">Terça a domingo · 17h — 00h</span>
+        </div>
+        <div>
+          <span class="k">Reservas</span>
+          <span class="v"><a href="#reservar">no WhatsApp</a></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SOBRE ============ -->
+    <section class="section sobre" id="sobre">
+      <div class="split">
+        <figure class="split-media reveal">
+          <div class="ph ph-tall" role="img" aria-label="Cozinha marítima"></div>
+        </figure>
+        <div class="split-copy reveal">
+          <p class="eyebrow">O conceito</p>
+          <h2>Do anzol ao copo</h2>
+          <p>
+            O Pargo nasceu da vontade de juntar duas coisas que Ubatuba faz bem:
+            o peixe que chega fresco todo dia e a noite que pede um bom drink.
+            Aqui a cozinha conversa com o bar — o mesmo cítrico que tempera a
+            ostra volta no copo, a defumação do peixe aparece no coquetel.
+          </p>
+          <p>
+            Menu curto e sazonal, do que o mar deu naquele dia. Sem cardápio
+            gigante, sem congelado. O que tem, tem de bom.
+          </p>
+          <ul class="marks">
+            <li>Peixe e frutos do mar do dia</li>
+            <li>Raw bar: ostras, ceviche, crudo</li>
+            <li>Drinks autorais e clássicos bem-feitos</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ MENU ============ -->
+    <section class="section menu" id="menu">
+      <div class="section-head reveal">
+        <p class="eyebrow">O menu</p>
+        <h2>O que sai do balcão</h2>
+        <p class="sub">Uma amostra. O cardápio completo muda com a maré.</p>
+      </div>
+
+      <div class="menu-tabs reveal" role="tablist" aria-label="Categorias do menu">
+        <button role="tab" aria-selected="true" data-tab="raw">Raw Bar</button>
+        <button role="tab" aria-selected="false" data-tab="cozinha">Cozinha</button>
+        <button role="tab" aria-selected="false" data-tab="drinks">Drinks</button>
+        <button role="tab" aria-selected="false" data-tab="garrafa">Garrafas</button>
+      </div>
+
+      <div class="menu-panels reveal">
+        <div class="menu-panel is-active" data-panel="raw">
+          <article class="menu-item">
+            <div class="mi-head"><h3>Ostras da Fazenda</h3><span class="price">meia dúzia · R$ 54</span></div>
+            <p>Ao natural, com mignonette de tangerina.</p>
+          </article>
+          <article class="menu-item">
+            <div class="mi-head"><h3>Ceviche de Pargo</h3><span class="price">R$ 48</span></div>
+            <p>Leite de tigre, cebola roxa, batata-doce e milho crocante.</p>
+          </article>
+          <article class="menu-item">
+            <div class="mi-head"><h3>Crudo do Dia</h3><span class="price">R$ 52</span></div>
+            <p>Peixe fresco fatiado fino, azeite de ervas, flor de sal e limão-cravo.</p>
+          </article>
+          <article class="menu-item">
+            <div class="mi-head"><h3>Tártaro de Atum</h3><span class="price">R$ 56</span></div>
+            <p>Gergelim, gema curada, maçã verde e torradas de massa-madre.</p>
+          </article>
+        </div>
+
+        <div class="menu-panel" data-panel="cozinha">
+          <article class="menu-item">
+            <div class="mi-head"><h3>Peixe do Dia na Brasa</h3><span class="price">R$ 89</span></div>
+            <p>Inteiro ou em posta, manteiga de limão-siciliano e farofa de coentro.</p>
+          </article>
+          <article class="menu-item">
+            <div class="mi-head"><h3>Moqueca de Banana-da-Terra</h3><span class="price">R$ 76</span></div>
+            <p>Camarão, leite de coco, dendê na medida e arroz de castanha.</p>
+          </article>
+          <article class="menu-item">
+            <div class="mi-head"><h3>Bobó de Camarão</h3><span class="price">R$ 78</span></div>
+            <p>Aipim, azeite de urucum e camarão salteado na hora.</p>
+          </article>
+          <article class="menu-item">
+            <div class="mi-head"><h3>Pastel de Pargo</h3><span class="price">4 un · R$ 38</span></div>
+            <p>Recheio cremoso de peixe, molho de pimenta da casa.</p>
+          </article>
+        </div>
+
+        <div class="menu-panel" data-panel="drinks">
+          <article class="menu-item">
+            <div class="mi-head"><h3>Maré Cheia</h3><span class="price">R$ 39</span></div>
+            <p>Cachaça envelhecida, tangerina, mel de cana e um toque salino.</p>
+          </article>
+          <article class="menu-item">
+            <div class="mi-head"><h3>Pargo Sour</h3><span class="price">R$ 37</span></div>
+            <p>Gin, limão-cravo, xarope de capim-santo e clara.</p>
+          </article>
+          <article class="menu-item">
+            <div class="mi-head"><h3>Defumado do Píer</h3><span class="price">R$ 42</span></div>
+            <p>Mezcal, vermute seco, laranja-baía e fumaça de madeira de praia.</p>
+          </article>
+          <article class="menu-item">
+            <div class="mi-head"><h3>Água de Coco &amp; Rum</h3><span class="price">R$ 34</span></div>
+            <p>Rum branco, coco fresco, limão e hortelã.</p>
+          </article>
+        </div>
+
+        <div class="menu-panel" data-panel="garrafa">
+          <article class="menu-item">
+            <div class="mi-head"><h3>Espumante Brut Nacional</h3><span class="price">taça R$ 28 · garrafa R$ 140</span></div>
+            <p>Fresco e cítrico — combina com tudo do raw bar.</p>
+          </article>
+          <article class="menu-item">
+            <div class="mi-head"><h3>Branco de Guarda</h3><span class="price">garrafa R$ 165</span></div>
+            <p>Corpo médio, final mineral. Vai bem com o peixe na brasa.</p>
+          </article>
+          <article class="menu-item">
+            <div class="mi-head"><h3>Cervejas Artesanais</h3><span class="price">a partir de R$ 22</span></div>
+            <p>Rotativas, de produtores do litoral. Pergunte ao balcão.</p>
+          </article>
+        </div>
+      </div>
+
+      <div class="menu-cta reveal">
+        <a href="#contato" class="btn btn-ghost">Ver cardápio completo</a>
+      </div>
+    </section>
+
+    <!-- ============ FRASE / QUEBRA ============ -->
+    <section class="quote reveal">
+      <blockquote>
+        “A gente serve o que o mar mandou hoje —<br />
+        e um copo à altura.”
+      </blockquote>
+    </section>
+
+    <!-- ============ GALERIA ============ -->
+    <section class="section galeria" id="galeria">
+      <div class="section-head reveal">
+        <p class="eyebrow">A casa</p>
+        <h2>Um pé na areia, outro no balcão</h2>
+      </div>
+      <div class="gallery reveal">
+        <div class="ph g1" role="img" aria-label="Ambiente"></div>
+        <div class="ph g2" role="img" aria-label="Drink autoral"></div>
+        <div class="ph g3" role="img" aria-label="Raw bar"></div>
+        <div class="ph g4" role="img" aria-label="Peixe na brasa"></div>
+        <div class="ph g5" role="img" aria-label="Balcão à noite"></div>
+      </div>
+    </section>
+
+    <!-- ============ LOCALIZAÇÃO / RESERVA ============ -->
+    <section class="section local" id="contato">
+      <div class="split">
+        <div class="split-copy reveal" id="reservar">
+          <p class="eyebrow">Chega mais</p>
+          <h2>Reserva &amp; localização</h2>
+          <p>
+            R. Eugênio Frediani, 46 — Ubatuba, SP<br />
+            Terça a domingo · 17h às 00h · segunda fechado
+          </p>
+          <p>
+            Reservas e encomendas pelo WhatsApp. Para grupos acima de 8 pessoas,
+            fale com a gente com antecedência.
+          </p>
+          <div class="hero-actions">
+            <a href="https://wa.me/5512000000000" class="btn btn-solid" target="_blank" rel="noreferrer">Reservar no WhatsApp</a>
+            <a
+              href="https://www.google.com/maps/search/?api=1&query=Pargo+Fish+Bar+Ubatuba"
+              class="btn btn-link"
+              target="_blank"
+              rel="noreferrer"
+            >Como chegar →</a>
+          </div>
+        </div>
+        <figure class="split-media reveal">
+          <div class="ph ph-tall" role="img" aria-label="Mapa — Ubatuba"></div>
+        </figure>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="site-footer">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-brand-row">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <span class="brand-text">
+            <strong>Pargo</strong>
+            <em>Fish Bar</em>
+          </span>
+        </div>
+        <p>Sabor de mar, alma de bar.</p>
+      </div>
+      <nav class="footer-cols" aria-label="Rodapé">
+        <div>
+          <h4>Menu</h4>
+          <a href="#menu">Raw Bar</a>
+          <a href="#menu">Cozinha</a>
+          <a href="#menu">Drinks</a>
+        </div>
+        <div>
+          <h4>A casa</h4>
+          <a href="#sobre">Sobre</a>
+          <a href="#galeria">Galeria</a>
+          <a href="#contato">Contato</a>
+        </div>
+        <div>
+          <h4>Siga</h4>
+          <a href="https://instagram.com/" target="_blank" rel="noreferrer">Instagram</a>
+          <a href="https://wa.me/5512000000000" target="_blank" rel="noreferrer">WhatsApp</a>
+        </div>
+      </nav>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span id="year"></span> Pargo Fish Bar · Ubatuba, SP</span>
+      <span>R. Eugênio Frediani, 46</span>
+    </div>
+  </footer>
+
+  <script src="assets/script.js"></script>
+</body>
+</html>
