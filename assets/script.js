@@ -50,15 +50,16 @@ document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
 // ---------- ano no rodapé ----------
 document.getElementById("year").textContent = new Date().getFullYear();
 
-// ---------- lightbox da galeria ----------
+// ---------- lightbox da galeria (fotos e v\u00eddeos) ----------
 (function () {
   const items = [...document.querySelectorAll(".gallery .g-item")];
   if (!items.length) return;
 
-  const srcs = items.map((b) => {
-    const img = b.querySelector("img");
-    return { src: img.getAttribute("src"), alt: img.getAttribute("alt") || "" };
-  });
+  const media = items.map((b) => ({
+    kind: b.dataset.kind === "video" ? "video" : "img",
+    src: b.dataset.full || (b.querySelector("img, video") || {}).src || "",
+    alt: (b.querySelector("img") || {}).alt || "",
+  }));
 
   const box = document.createElement("div");
   box.className = "lightbox";
@@ -68,20 +69,34 @@ document.getElementById("year").textContent = new Date().getFullYear();
   box.innerHTML =
     '<button class="lb-btn lb-close" aria-label="Fechar">\u2715</button>' +
     '<button class="lb-btn lb-nav lb-prev" aria-label="Anterior">\u2039</button>' +
-    '<img alt="" />' +
+    '<div class="lb-stage"></div>' +
     '<button class="lb-btn lb-nav lb-next" aria-label="Pr\u00f3xima">\u203a</button>' +
     '<span class="lb-count"></span>';
   document.body.appendChild(box);
 
-  const lbImg = box.querySelector("img");
+  const stage = box.querySelector(".lb-stage");
   const lbCount = box.querySelector(".lb-count");
   let idx = 0;
 
   const render = (i) => {
-    idx = (i + srcs.length) % srcs.length;
-    lbImg.src = srcs[idx].src;
-    lbImg.alt = srcs[idx].alt;
-    lbCount.textContent = idx + 1 + " / " + srcs.length;
+    idx = (i + media.length) % media.length;
+    const m = media[idx];
+    stage.innerHTML = "";
+    if (m.kind === "video") {
+      const v = document.createElement("video");
+      v.src = m.src;
+      v.controls = true;
+      v.autoplay = true;
+      v.loop = true;
+      v.playsInline = true;
+      stage.appendChild(v);
+    } else {
+      const im = document.createElement("img");
+      im.src = m.src;
+      im.alt = m.alt;
+      stage.appendChild(im);
+    }
+    lbCount.textContent = idx + 1 + " / " + media.length;
   };
   const open = (i) => {
     render(i);
@@ -90,6 +105,7 @@ document.getElementById("year").textContent = new Date().getFullYear();
   };
   const close = () => {
     box.hidden = true;
+    stage.innerHTML = "";
     document.body.style.overflow = "";
   };
 
@@ -104,7 +120,7 @@ document.getElementById("year").textContent = new Date().getFullYear();
     render(idx + 1);
   });
   box.addEventListener("click", (e) => {
-    if (e.target === box) close();
+    if (e.target === box || e.target === stage) close();
   });
   document.addEventListener("keydown", (e) => {
     if (box.hidden) return;
