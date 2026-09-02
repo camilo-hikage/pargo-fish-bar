@@ -434,8 +434,10 @@ h3 {
   width: auto;
   max-width: 100%;
   max-height: 78vh;
-  border-radius: 4px;
+  /* cantos superior-esquerdo e inferior-direito bem arredondados */
+  border-radius: 46px 8px 46px 8px;
   border: 1px solid var(--line-l);
+  box-shadow: 0 24px 55px -18px rgba(12, 20, 40, 0.6);
 }
 
 .hours {
