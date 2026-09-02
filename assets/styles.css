@@ -325,6 +325,13 @@ h3 {
   border-radius: 50vw 50vw 6px 6px / 40vw 40vw 6px 6px;
   overflow: hidden;
   border: 1px solid var(--line-l);
+  background: linear-gradient(160deg, var(--sand), #e2d6bd);
+}
+.hero-video {
+  display: block;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
 }
 
 .hero-strip {
