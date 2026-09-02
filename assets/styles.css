@@ -608,19 +608,20 @@ h3 {
 }
 .gallery {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-auto-rows: 220px;
+  grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
 }
-.gallery .ph {
+.gallery img {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
   border-radius: 3px;
+  border: 1px solid var(--line-d);
 }
-.gallery .g1 {
-  grid-column: span 2;
-  grid-row: span 2;
-}
-.gallery .g4 {
-  grid-column: span 2;
+/* leve ritmo: 1º e último em pé maior */
+.gallery img:first-child,
+.gallery img:last-child {
+  aspect-ratio: 3 / 4.6;
 }
 
 /* ============================================================
@@ -805,12 +806,11 @@ h3 {
 
   .gallery {
     grid-template-columns: repeat(2, 1fr);
-    grid-auto-rows: 170px;
   }
-  .gallery .g1,
-  .gallery .g4 {
-    grid-column: span 2;
-    grid-row: auto;
+  .gallery img,
+  .gallery img:first-child,
+  .gallery img:last-child {
+    aspect-ratio: 3 / 4;
   }
 
   .footer-top {
