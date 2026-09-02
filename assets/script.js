@@ -49,3 +49,67 @@ document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
 
 // ---------- ano no rodapé ----------
 document.getElementById("year").textContent = new Date().getFullYear();
+
+// ---------- lightbox da galeria ----------
+(function () {
+  const items = [...document.querySelectorAll(".gallery .g-item")];
+  if (!items.length) return;
+
+  const srcs = items.map((b) => {
+    const img = b.querySelector("img");
+    return { src: img.getAttribute("src"), alt: img.getAttribute("alt") || "" };
+  });
+
+  const box = document.createElement("div");
+  box.className = "lightbox";
+  box.setAttribute("role", "dialog");
+  box.setAttribute("aria-modal", "true");
+  box.hidden = true;
+  box.innerHTML =
+    '<button class="lb-btn lb-close" aria-label="Fechar">\u2715</button>' +
+    '<button class="lb-btn lb-nav lb-prev" aria-label="Anterior">\u2039</button>' +
+    '<img alt="" />' +
+    '<button class="lb-btn lb-nav lb-next" aria-label="Pr\u00f3xima">\u203a</button>' +
+    '<span class="lb-count"></span>';
+  document.body.appendChild(box);
+
+  const lbImg = box.querySelector("img");
+  const lbCount = box.querySelector(".lb-count");
+  let idx = 0;
+
+  const render = (i) => {
+    idx = (i + srcs.length) % srcs.length;
+    lbImg.src = srcs[idx].src;
+    lbImg.alt = srcs[idx].alt;
+    lbCount.textContent = idx + 1 + " / " + srcs.length;
+  };
+  const open = (i) => {
+    render(i);
+    box.hidden = false;
+    document.body.style.overflow = "hidden";
+  };
+  const close = () => {
+    box.hidden = true;
+    document.body.style.overflow = "";
+  };
+
+  items.forEach((b, i) => b.addEventListener("click", () => open(i)));
+  box.querySelector(".lb-close").addEventListener("click", close);
+  box.querySelector(".lb-prev").addEventListener("click", (e) => {
+    e.stopPropagation();
+    render(idx - 1);
+  });
+  box.querySelector(".lb-next").addEventListener("click", (e) => {
+    e.stopPropagation();
+    render(idx + 1);
+  });
+  box.addEventListener("click", (e) => {
+    if (e.target === box) close();
+  });
+  document.addEventListener("keydown", (e) => {
+    if (box.hidden) return;
+    if (e.key === "Escape") close();
+    else if (e.key === "ArrowLeft") render(idx - 1);
+    else if (e.key === "ArrowRight") render(idx + 1);
+  });
+})();
