@@ -504,53 +504,36 @@ h3 {
   transform: rotate(45deg);
 }
 
-/* ---------- sobre: vídeo em background full-width ---------- */
-.sobre-video {
-  position: relative;
-  overflow: hidden;
-  color: var(--cream);
-  padding: clamp(6rem, 13vw, 10rem) 1.5rem;
-  text-align: center;
-}
-.section-bg-video {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: 0;
-}
-.sobre-video-overlay {
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  background: linear-gradient(180deg, rgba(20, 33, 55, 0.82) 0%, rgba(13, 20, 38, 0.9) 100%);
-}
-.sobre-video-inner {
-  position: relative;
-  z-index: 2;
-  max-width: 620px;
-  margin: 0 auto;
-}
-.sobre-video-inner .eyebrow {
-  color: var(--sun);
+/* ---------- sobre: texto + vídeo lado a lado (sem overlay) ---------- */
+.sobre-grid {
+  display: grid;
+  grid-template-columns: 1fr 0.82fr;
+  gap: 4rem;
+  align-items: center;
 }
 .sobre-video-inner h2 {
-  color: var(--cream);
-  font-size: clamp(2.4rem, 5vw, 3.6rem);
+  font-size: clamp(2.2rem, 4.5vw, 3.2rem);
   margin-bottom: 1.4rem;
 }
 .sobre-video-inner p {
-  color: var(--cream-dim);
+  color: var(--ink-soft);
   margin-bottom: 1.1rem;
+  max-width: 46ch;
 }
 .sobre-video-inner .marks {
-  display: inline-block;
-  text-align: left;
-  margin-top: 1.6rem;
+  margin-top: 1.8rem;
 }
-.sobre-video-inner .marks li {
-  color: var(--cream);
+.sobre-media {
+  overflow: hidden;
+  border-radius: 42px 8px 42px 8px;
+  border: 1px solid var(--line-d);
+  box-shadow: 0 24px 55px -18px rgba(20, 33, 55, 0.4);
+}
+.sobre-clip {
+  display: block;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
 }
 
 /* ---------- menu ---------- */
@@ -861,11 +844,13 @@ h3 {
   .galeria {
     padding: 5rem 1.5rem;
   }
-  .split {
+  .split,
+  .sobre-grid {
     grid-template-columns: 1fr;
     gap: 2.5rem;
   }
-  .split-media {
+  .split-media,
+  .sobre-media {
     max-width: 420px;
   }
 
