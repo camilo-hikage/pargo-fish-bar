@@ -1,28 +1,28 @@
 /* ============================================================
    Pargo Fish Bar — estilo
-   paleta: azul-noite #203351 · azul-aço #91A2C0
-           coral #EE7B57 · sol #E7B24A · areia #EFE6D3
+   paleta: areia #EFE6D3 (seções) · azul-noite #203351 (faixas)
+           azul-aço #91A2C0 · coral #E56A43 · sol #E7B24A
    ============================================================ */
 :root {
-  --paper: #203351;
-  --paper-2: #1b2c47;
-  --ink: #dce3f1;
-  --ink-soft: #97a6c3;
+  --paper: #efe6d3;
+  --paper-2: #e7dcc2;
+  --ink: #22364f;
+  --ink-soft: #5f7089;
 
-  --ox: #243c5e;
-  --ox-2: #172740;
-  --cream: #eaeef8;
-  --cream-dim: #9aa8c5;
+  --ox: #21354f;
+  --ox-2: #16233a;
+  --cream: #f3ece0;
+  --cream-dim: #b4bdcf;
 
   --blue: #91a2c0;
-  --blue-deep: #6b80a6;
-  --coral: #ee7b57;
-  --coral-2: #d9663f;
+  --blue-deep: #56728a;
+  --coral: #e56a43;
+  --coral-2: #cf5a34;
   --sun: #e7b24a;
   --sand: #efe6d3;
 
-  --line-d: rgba(145, 162, 192, 0.2);
-  --line-l: rgba(145, 162, 192, 0.24);
+  --line-d: rgba(34, 54, 79, 0.18);
+  --line-l: rgba(243, 236, 224, 0.22);
 
   --serif: "Fraunces", "Cormorant Garamond", Georgia, serif;
   --sans: "Jost", system-ui, -apple-system, "Segoe UI", sans-serif;
@@ -89,7 +89,7 @@ h3 {
   letter-spacing: 0.2em;
   font-size: 0.7rem;
   padding: 1rem 1.7rem;
-  border: 1px solid var(--blue);
+  border: 1px solid var(--blue-deep);
   color: var(--ink);
   background: transparent;
   cursor: pointer;
@@ -366,9 +366,9 @@ h3 {
 .ph {
   position: relative;
   background:
-    radial-gradient(120% 90% at 30% 10%, rgba(255, 255, 255, 0.5), transparent 58%),
-    linear-gradient(160deg, var(--sand), #e2d6bd);
-  border: 1px solid var(--line-l);
+    radial-gradient(120% 90% at 30% 10%, rgba(255, 255, 255, 0.45), transparent 58%),
+    linear-gradient(160deg, #ccd9e4, #b6c6d8);
+  border: 1px solid var(--line-d);
 }
 .ph::after {
   content: "foto";
@@ -379,7 +379,7 @@ h3 {
   font-size: 0.66rem;
   letter-spacing: 0.3em;
   text-transform: uppercase;
-  color: rgba(32, 51, 81, 0.4);
+  color: rgba(32, 51, 81, 0.45);
 }
 .hero .ph {
   background:
@@ -416,8 +416,7 @@ h3 {
   width: 44px;
   height: 2px;
   margin: 1.1rem auto 0;
-  background: var(--sand);
-  opacity: 0.7;
+  background: var(--coral);
 }
 .section-head .sub {
   color: var(--ink-soft);
@@ -453,8 +452,8 @@ h3 {
   max-height: 78vh;
   /* cantos superior-esquerdo e inferior-direito bem arredondados */
   border-radius: 46px 8px 46px 8px;
-  border: 1px solid var(--line-l);
-  box-shadow: 0 24px 55px -18px rgba(12, 20, 40, 0.6);
+  border: 1px solid var(--line-d);
+  box-shadow: 0 24px 55px -18px rgba(20, 33, 55, 0.4);
 }
 
 .hours {
@@ -568,7 +567,7 @@ h3 {
   font-family: var(--sans);
   font-size: 0.74rem;
   letter-spacing: 0.12em;
-  color: var(--sun);
+  color: var(--coral-2);
   white-space: nowrap;
 }
 .menu-item p {
