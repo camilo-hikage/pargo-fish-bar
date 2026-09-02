@@ -1,3 +1,6 @@
 .DS_Store
 node_modules/
 *.log
+
+# arquivos-fonte (logo original, videos de referencia) — nao vao pro site
+materials/
