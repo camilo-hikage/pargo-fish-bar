@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="960" viewBox="0 0 720 960">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#efe6d3"/>
+      <stop offset="0.22" stop-color="#e2d6bd"/>
+      <stop offset="0.44" stop-color="#d68b60"/>
+      <stop offset="0.64" stop-color="#8a6a6a"/>
+      <stop offset="0.82" stop-color="#3c4f70"/>
+      <stop offset="1" stop-color="#203351"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.32" cy="0.22" r="0.7">
+      <stop offset="0" stop-color="#f0c14b" stop-opacity="0.5"/>
+      <stop offset="0.4" stop-color="#ee7b57" stop-opacity="0.22"/>
+      <stop offset="1" stop-color="#ee7b57" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="vig" cx="0.5" cy="0.5" r="0.75">
+      <stop offset="0.55" stop-color="#000000" stop-opacity="0"/>
+      <stop offset="1" stop-color="#0d1526" stop-opacity="0.45"/>
+    </radialGradient>
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" stitchTiles="stitch" result="n"/>
+      <feColorMatrix in="n" type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 0.06 0"/>
+    </filter>
+  </defs>
+
+  <rect width="720" height="960" fill="url(#g)"/>
+  <rect width="720" height="960" fill="url(#glow)"/>
+
+  <!-- linha de onda sutil -->
+  <path d="M-20 620 C 140 560 260 560 400 616 C 520 664 600 690 740 640"
+        fill="none" stroke="#efe6d3" stroke-opacity="0.28" stroke-width="2"/>
+  <path d="M-20 470 C 150 420 270 500 420 470 C 560 442 640 400 740 452"
+        fill="none" stroke="#efe6d3" stroke-opacity="0.16" stroke-width="2"/>
+
+  <rect width="720" height="960" fill="url(#vig)"/>
+  <rect width="720" height="960" filter="url(#grain)"/>
+</svg>
