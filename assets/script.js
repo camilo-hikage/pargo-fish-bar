@@ -58,10 +58,25 @@ document.getElementById("year").textContent = new Date().getFullYear();
   const copy = hero.querySelector(".hero-copy");
   const media = hero.querySelector(".hero-media");
   const strip = hero.querySelector(".hero-strip");
+  const wide = window.matchMedia("(min-width: 901px)");
   let ticking = false;
+
+  const clear = (el) => {
+    if (!el) return;
+    el.style.transform = "";
+    el.style.opacity = "";
+  };
 
   const update = () => {
     ticking = false;
+    // no celular o layout é empilhado — parallax por scrollY sumiria com o
+    // texto antes dele entrar na tela, então fica desligado
+    if (!wide.matches) {
+      clear(copy);
+      clear(media);
+      clear(strip);
+      return;
+    }
     const y = window.scrollY;
     const vh = window.innerHeight;
     if (y > vh) return; // hero já saiu de cena
@@ -90,6 +105,7 @@ document.getElementById("year").textContent = new Date().getFullYear();
     },
     { passive: true },
   );
+  wide.addEventListener("change", update);
   update();
 })();
 

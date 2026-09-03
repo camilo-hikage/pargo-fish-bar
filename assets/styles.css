@@ -202,13 +202,13 @@ h3 {
 }
 /* ---- cubo-luminária 3D (marca) ---- */
 .brand-mark {
-  --cube-s: 44px;
-  width: 56px;
-  height: 56px;
+  --cube-s: 88px;
+  width: 104px;
+  height: 104px;
   flex-shrink: 0;
   display: grid;
   place-items: center;
-  perspective: 560px;
+  perspective: calc(var(--cube-s) * 13);
 }
 .cube {
   position: relative;
@@ -932,9 +932,9 @@ h3 {
     gap: 0.7rem;
   }
   .brand-mark {
-    --cube-s: 34px;
-    width: 42px;
-    height: 42px;
+    --cube-s: 68px;
+    width: 80px;
+    height: 80px;
   }
   .brand-text {
     align-items: flex-start;
