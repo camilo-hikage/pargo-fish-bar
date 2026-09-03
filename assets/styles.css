@@ -285,25 +285,13 @@ h3 {
 }
 .brand-text {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  line-height: 1;
 }
-.brand-text strong {
-  font-family: var(--serif);
-  font-weight: 500;
-  font-size: 1.3rem;
-  letter-spacing: 0.06em;
-}
-.brand-text em {
-  font-family: var(--sans);
-  font-style: normal;
-  text-transform: uppercase;
-  letter-spacing: 0.36em;
-  font-size: 0.55rem;
-  color: var(--blue);
-  margin-top: 4px;
-  padding-left: 0.36em;
+.brand-text img {
+  display: block;
+  height: 2.5rem;
+  width: auto;
+  /* o wordmark é navy; header e rodapé são escuros, então clareia pra creme */
+  filter: brightness(0) invert(1) sepia(0.18) saturate(1.4) brightness(1.05);
 }
 
 .nav-toggle {
@@ -939,11 +927,8 @@ h3 {
     width: 80px;
     height: 80px;
   }
-  .brand-text {
-    align-items: flex-start;
-  }
-  .brand-text em {
-    padding-left: 0;
+  .brand-text img {
+    height: 2rem;
   }
   .nav-toggle {
     display: flex;
