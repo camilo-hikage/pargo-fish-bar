@@ -268,12 +268,12 @@ h3 {
   position: absolute;
   top: 0;
   bottom: 0;
-  left: 0;
-  width: min(56%, 720px);
+  left: 382px;
+  width: 720px;
   background: url("logo.png") no-repeat left center;
   /* `contain` preserva a proporção e evita cortar a marca nas bordas. */
   background-size: contain;
-  opacity: 0.5;
+  opacity: 0.04;
   z-index: 0;
   pointer-events: none;
 }
