@@ -986,7 +986,18 @@ h3 {
   }
   .hero-media {
     order: -1;
-    max-width: 360px;
+    max-width: none;
+    /* fura o padding lateral do .hero-grid (2rem) — vídeo de ponta a ponta */
+    margin-left: -2rem;
+    margin-right: -2rem;
+  }
+  .hero-media .arch {
+    border-radius: 110px 110px 4px 4px;
+    border-left: 0;
+    border-right: 0;
+  }
+  .hero-video {
+    aspect-ratio: 4 / 5;
   }
   .hero .lead {
     max-width: none;
@@ -1010,10 +1021,28 @@ h3 {
   }
   .split-media,
   .sobre-media {
-    max-width: 420px;
+    max-width: none;
   }
   .sobre-media {
     order: 0; /* no celular, texto primeiro */
+    /* fura o padding lateral do .sobre (1.5rem) */
+    margin-left: -1.5rem;
+    margin-right: -1.5rem;
+    border-radius: 0;
+    border-left: 0;
+    border-right: 0;
+  }
+  .map-media {
+    margin-left: -1.5rem;
+    margin-right: -1.5rem;
+  }
+  .map-media img {
+    width: 100%;
+    max-width: none;
+    max-height: none;
+    border-radius: 0;
+    border-left: 0;
+    border-right: 0;
   }
 
   .gallery {
