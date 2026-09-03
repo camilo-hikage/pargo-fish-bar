@@ -262,15 +262,15 @@ h3 {
   color: var(--cream);
   padding: 11rem 0 0;
 }
-/* logo do lado direito, marca-d'água inteira */
+/* logo do lado esquerdo, marca-d'água inteira */
 .hero::after {
   content: "";
   position: absolute;
   top: 0;
   bottom: 0;
-  right: 0;
+  left: 0;
   width: min(56%, 720px);
-  background: url("logo.png") no-repeat right center;
+  background: url("logo.png") no-repeat left center;
   /* `contain` preserva a proporção e evita cortar a marca nas bordas. */
   background-size: contain;
   opacity: 0.5;
