@@ -50,6 +50,49 @@ document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
 // ---------- ano no rodapé ----------
 document.getElementById("year").textContent = new Date().getFullYear();
 
+// ---------- parallax do hero ao rolar ----------
+(function () {
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  const hero = document.querySelector(".hero");
+  if (!hero) return;
+  const copy = hero.querySelector(".hero-copy");
+  const media = hero.querySelector(".hero-media");
+  const strip = hero.querySelector(".hero-strip");
+  let ticking = false;
+
+  const update = () => {
+    ticking = false;
+    const y = window.scrollY;
+    const vh = window.innerHeight;
+    if (y > vh) return; // hero já saiu de cena
+    const p = Math.min(y / (vh * 0.85), 1); // 0 → 1 conforme rola o hero
+    if (copy) {
+      copy.style.transform = "translateY(" + y * 0.28 + "px)";
+      copy.style.opacity = String(1 - p);
+    }
+    if (media) {
+      media.style.transform = "translateY(" + y * 0.1 + "px) scale(" + (1 - p * 0.05) + ")";
+      media.style.opacity = String(1 - p * 0.8);
+    }
+    if (strip) {
+      strip.style.transform = "translateY(" + y * 0.45 + "px)";
+      strip.style.opacity = String(Math.max(0, 1 - p * 1.6));
+    }
+  };
+
+  window.addEventListener(
+    "scroll",
+    () => {
+      if (!ticking) {
+        requestAnimationFrame(update);
+        ticking = true;
+      }
+    },
+    { passive: true },
+  );
+  update();
+})();
+
 // ---------- lightbox da galeria (fotos e v\u00eddeos) ----------
 (function () {
   const items = [...document.querySelectorAll(".gallery .g-item")];

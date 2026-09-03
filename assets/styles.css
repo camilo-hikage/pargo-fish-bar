@@ -379,6 +379,20 @@ h3 {
   border-bottom: 1px solid var(--coral);
 }
 
+/* parallax ao rolar — o transform/opacity é aplicado pelo script.js */
+.hero-copy,
+.hero-media,
+.hero-strip {
+  will-change: transform, opacity;
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-copy,
+  .hero-media,
+  .hero-strip {
+    will-change: auto;
+  }
+}
+
 /* ============================================================
    PLACEHOLDERS DE FOTO
    ============================================================ */
