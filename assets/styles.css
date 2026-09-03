@@ -247,14 +247,15 @@ h3 {
 .cube-bottom {
   transform: rotateX(-90deg) translateZ(calc(var(--cube-s) / 2));
 }
-/* mascote como silhueta escura na placa acesa */
+/* mascote como traço escuro na placa acesa — a arte original é clara,
+   então escurece com filtro em vez de usar máscara (que virava um bloco chapado) */
 .cube-mascot::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: #1b2c48;
-  -webkit-mask: url("logo.png") no-repeat center / 102%;
-  mask: url("logo.png") no-repeat center / 102%;
+  background: url("logo.png") no-repeat center / 102%;
+  filter: brightness(0) saturate(100%) invert(13%) sepia(29%) saturate(1900%)
+    hue-rotate(188deg) brightness(0.95);
 }
 /* "PARGO" empilhado, como na luminária real */
 .cube-word {
