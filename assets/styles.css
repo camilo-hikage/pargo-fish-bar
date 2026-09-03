@@ -260,9 +260,13 @@ h3 {
   filter: brightness(0) saturate(100%) invert(13%) sepia(29%) saturate(1900%)
     hue-rotate(188deg) brightness(0.95);
 }
-/* "PARGO / FISH BAR" — wordmark da luminária real */
+/* "PARGO / FISH BAR" — wordmark da luminária real.
+   Mantém margem para a placa quente aparecer em volta (senão o azul domina). */
 .cube-word {
-  background: url("pargo.png") no-repeat center / 86%;
+  background-image: url("pargo.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 62%;
 }
 @keyframes cube-spin {
   from {
