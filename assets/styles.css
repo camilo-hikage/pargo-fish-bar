@@ -253,8 +253,8 @@ h3 {
   position: absolute;
   inset: 0;
   background: #1b2c48;
-  -webkit-mask: url("logo.png") no-repeat center / 76%;
-  mask: url("logo.png") no-repeat center / 76%;
+  -webkit-mask: url("logo.png") no-repeat center / 102%;
+  mask: url("logo.png") no-repeat center / 102%;
 }
 /* "PARGO" empilhado, como na luminária real */
 .cube-word {
