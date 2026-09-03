@@ -257,15 +257,9 @@ h3 {
   filter: brightness(0) saturate(100%) invert(13%) sepia(29%) saturate(1900%)
     hue-rotate(188deg) brightness(0.95);
 }
-/* "PARGO" empilhado, como na luminária real */
+/* "PARGO / FISH BAR" — wordmark da luminária real */
 .cube-word {
-  font-family: var(--sans);
-  font-weight: 700;
-  font-size: calc(var(--cube-s) * 0.27);
-  line-height: 0.9;
-  letter-spacing: 0.04em;
-  text-align: center;
-  color: #1b2c48;
+  background: url("pargo.png") no-repeat center / 86%;
 }
 @keyframes cube-spin {
   from {
