@@ -263,10 +263,11 @@ h3 {
 /* "PARGO / FISH BAR" — wordmark da luminária real.
    Mantém margem para a placa quente aparecer em volta (senão o azul domina). */
 .cube-word {
-  background-image: url("pargo.png");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 62%;
+  background-color: #fff4de;
+  background-image: url("pargo.png"), linear-gradient(155deg, #fff4de, #f4ca82);
+  background-repeat: no-repeat, no-repeat;
+  background-position: center, center;
+  background-size: 62%, cover;
 }
 @keyframes cube-spin {
   from {
